@@ -19,20 +19,9 @@ class TrackRecommendationModel:
 
         model_features = ["explicit", "danceability", "energy", "loudness", "speechiness", "acousticness", "liveness",
                           "valence"]
-        annoy = AnnoyIndex(len(model_features), "euclidean")
-
-        print("Agregando elementos")
-        for i in tracks_df.index:
-            v = tracks_df.loc[i][model_features].values
-            annoy.add_item(i, v)
-
-        print("Elementos agregados")
-
-        annoy.build(1000, n_jobs=-1)
-        annoy.save("spotify.ann")
 
         annoy_loaded = AnnoyIndex(len(model_features), "euclidean")
-        annoy_loaded.load("spotify.ann")
+        annoy_loaded.load("./resources/spotify.ann")
 
         track_index = tracks_df.loc[tracks_df['id'] == track_id].index[0]
 
