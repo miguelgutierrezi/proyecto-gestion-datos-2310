@@ -27,7 +27,7 @@ def generate_model():
     print("Elementos agregados")
 
     annoy.build(1000, n_jobs=-1)
-    annoy.save("./resources/spotify.ann")
+    annoy.save("spotify.ann")
 
     print("Modelo cargado")
 
