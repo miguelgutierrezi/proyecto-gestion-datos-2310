@@ -9,7 +9,10 @@ class TrackRecommendationModel:
     @staticmethod
     def get_track_recommendations(track_id):
         print("Leyendo CSV")
-        tracks_df = pd.read_csv("./resources/tracks_mod.csv")
+        url = "https://storage.googleapis.com/proyecto-gestion-2310/tracks_mod.csv"
+
+        tracks_df = pd.read_csv(url)
+
         tracks_df.dropna(inplace=True)
 
         print("CSV leído y limpio, iniciando modelo")
