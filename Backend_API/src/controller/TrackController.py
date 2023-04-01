@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 
 from src.services.TrackService import TrackService
@@ -10,10 +10,9 @@ router = APIRouter(
 
 
 @router.get("/")
-async def get_all_tracks(page: int = Query(None)):
+async def get_all_tracks(page: int = 0, query: str = ""):
     try:
-        required_page = page if page is not None else 0
-        response = TrackService.get_all_tracks(required_page)
+        response = TrackService.get_all_tracks(page, query)
         return JSONResponse(content=response, status_code=200)
     except Exception as e:
         return HTTPException(detail={"error": str(e)}, status_code=500)

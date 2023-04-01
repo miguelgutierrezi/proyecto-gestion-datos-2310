@@ -21,12 +21,26 @@ class TrackRecommendationModel:
                           "valence"]
 
         annoy_loaded = AnnoyIndex(len(model_features), "euclidean")
+
+        """ file_url = "https://storage.googleapis.com/proyecto-gestion-2310/spotify.ann"
+        filename = "spotify.ann"
+        r = requests.get(file_url, allow_redirects=True)
+        open(filename, 'wb').write(r.content) """
+
         annoy_loaded.load("./resources/spotify.ann")
+
+        print("Modelo cargado")
 
         track_index = tracks_df.loc[tracks_df['id'] == track_id].index[0]
 
         print(f"Index: {track_index}")
 
         neighbors = annoy_loaded.get_nns_by_item(track_index, 10)
-        print(tracks_df.loc[neighbors])
-        return None
+        df = tracks_df.loc[neighbors]
+
+        results = []
+
+        for value in df.values.tolist():
+            results.append(dict(zip(df.columns, value)))
+
+        return results

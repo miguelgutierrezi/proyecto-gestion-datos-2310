@@ -5,8 +5,8 @@ from src.repositories.TrackRepository import TrackRepository
 class TrackService:
 
     @staticmethod
-    def get_all_tracks(page: int):
-        return TrackRepository.get_all_tracks(page)
+    def get_all_tracks(page: int, query: str):
+        return TrackRepository.get_all_tracks(page, query)
 
     @staticmethod
     def get_track(track_id: str):

@@ -4,7 +4,7 @@ uvicorn==0.18.3
 numpy==1.23.3
 pandas==1.5.0
 pydantic==1.10.2
-google-big-query==3.9.0
+google-cloud-bigquery==3.9.0
 pandas-gbq==0.19.1
 wheel==0.40.0
 annoy==1.17.1

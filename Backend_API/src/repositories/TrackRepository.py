@@ -10,13 +10,14 @@ credentials = service_account.Credentials.from_service_account_file(
 class TrackRepository:
 
     @staticmethod
-    def get_all_tracks(page: int):
+    def get_all_tracks(page: int, query: str):
         page_size = 20
         offset = (page - 1) * page_size
 
         query = f"""
         SELECT id, name, duration_ms, artists, release_date
         FROM `proyecto-gestion-2310.{TRACKS_TABLE_NAME}`
+        WHERE name LIKE '%{query}%'
         LIMIT {page_size}
         OFFSET {offset}
         """
