@@ -12,8 +12,9 @@ Instrucciones de ejecución:
 3. Crear el virtualenv para el proyecto `python -m venv env` o `python3 -m venv env`.
 4. Activar el ambiente virtual creado. El comando dependera de su S.O. En caso de ser basado en Linux, use `source env/bin/activate`, en caso de ser Windows use: `.\env\Scripts\activate`.
 5. Instale las dependencias requeridas haciendo uso de: `pip install -r requirements.txt`.
-6. Inicie el servidor con: `uvicorn src.main:app --reload`.
-7. Para testear el modelo use los siguientes endpoints:
+6. En caso de no contar con el modelo entrenado, por favor vuelva a la raíz de este repositorio, ubíquese en el proyecto `ModelGenerator`, siga las instrucciones para la generación del modelo, y copie el archivo `spotify.ann` en la ruta `/resources`.
+7. Inicie el servidor con: `uvicorn src.main:app --reload`.
+8. Para testear el modelo use los siguientes endpoints:
 
 _Predicción de canciones_
 
