@@ -29,6 +29,7 @@ Como carpetas principales, se cuenta con las siguientes:
 - Backend_API: Proyecto en FastAPI que expone el API que permite el uso del modelo de recomendaciones y expone endpoints para el consumo por parte del frontend.
 - Frontend_Spotify_Model: Proyecto en Angular que usa los endpoints del API mencionada en la carpeta anterior para la presentación del sistema.
 - ModelGenerator: Proyecto en Python que genera el Modelo entrenado usado para el sistema de recomendación.
+- Dashboard: Carpeta con las imagenes generadas en el dashboard de las graficas estadisticas de los datos.
 
 ## Instrucciones de ejecución
 
