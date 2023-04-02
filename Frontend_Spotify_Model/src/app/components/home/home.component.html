@@ -1,1 +1,35 @@
-<p>home works!</p>
+<div class="text-center">
+  <h1>Lista de canciones</h1>
+</div>
+
+<div class="text-center">
+  <input type="text" class="rounded-input" placeholder="Escriba el nombre que quiere buscar" [(ngModel)]="query">
+  <button class="rounded-button" (click)="searchWithQuery()">Buscar</button>
+</div>
+
+<div class="text-center" *ngIf="isLoading">
+  <app-loader></app-loader>
+</div>
+
+<div class="text-center" *ngIf="!isLoading">
+  <div class="cards-container">
+    <div class="card" *ngFor="let track of tracks">
+      <img src="assets/song_icon.jpg" alt="Song icon">
+      <div class="card-body">
+        <h5 class="card-title">{{track.name}}</h5>
+        <p class="card-text">
+          Duracion {{getDurationValue(track)}} minutos
+          <br>
+          {{track.artists}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center" *ngIf="!isLoading">
+  <p>
+    <span class="actionable" *ngIf="!isPreviousField" (click)="getPreviousPage()">Anterior </span>
+    <span>{{page}}</span>
+    <span class="actionable" *ngIf="!isNextPage" (click)="getNextPage()"> Siguiente</span></p>
+</div>

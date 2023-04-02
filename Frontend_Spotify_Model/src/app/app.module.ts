@@ -9,6 +9,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { TrackDetailComponent } from './components/track-detail/track-detail.component';
 import { TrackPredictionComponent } from './components/track-prediction/track-prediction.component';
 import { TrackContentComponent } from './components/track-content/track-content.component';
+import {NgxPaginationModule} from "ngx-pagination";
+import { LoaderComponent } from './components/loader/loader.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,12 +19,15 @@ import { TrackContentComponent } from './components/track-content/track-content.
     HomeComponent,
     TrackDetailComponent,
     TrackPredictionComponent,
-    TrackContentComponent
+    TrackContentComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [
     TrackService,

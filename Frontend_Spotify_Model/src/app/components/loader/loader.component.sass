@@ -1,0 +1,37 @@
+$roller-width: 80px
+$roller-height: 80px
+
+.lds-roller
+  display: inline-block
+  position: relative
+  width: $roller-width
+  height: $roller-height
+
+  div
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    transform-origin: ($roller-width / 2) ($roller-height / 2)
+
+    &:after
+      content: " "
+      display: block
+      position: absolute
+      width: 7px
+      height: 7px
+      border-radius: 50%
+      background: blue
+      margin: -4px 0 0 -4px
+
+    @for $i from 1 through 8
+      &:nth-child(#{$i})
+        animation-delay: (-0.036s * ($i - 1))
+
+        &:after
+          top: (63px + (5 * $i)) if ($i < 4) or (71px - (5 * ($i - 4))) if ($i > 4)
+          left: (63px - (8 * ($i - 1))) if ($i <= 4) or (17px + (8 * ($i - 5))) if ($i > 4)
+
+
+@keyframes lds-roller
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)

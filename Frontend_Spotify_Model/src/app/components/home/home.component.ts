@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TrackService} from "../../services/track.service";
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  page: number = 1;
+  query: string = '';
+  tracks: Array<any> = [];
+  isLoading: boolean = false;
+
+  constructor(
+    private trackService: TrackService
+  ) {
+  }
 
   ngOnInit(): void {
+    this.getTracks();
+  }
+
+  get isPreviousField() {
+    return this.page === 1;
+  }
+
+  get isNextPage() {
+    return this.tracks.length < 20;
+  }
+
+  public getTracks(): void {
+    this.isLoading = true;
+    this.trackService.getAllTracks(this.page, this.query).subscribe({
+      next: (res: any) => {
+        this.tracks = res;
+        this.isLoading = false;
+      },
+      error: err => {
+        console.log(err);
+        this.isLoading = false;
+      }
+    });
+  }
+
+  public getNextPage(): void {
+    this.page++;
+    this.getTracks();
+  }
+
+  public getPreviousPage(): void {
+    this.page--;
+    this.getTracks();
+  }
+
+  public searchWithQuery(): void {
+    this.page = 1;
+    this.getTracks();
+  }
+
+  public getDurationValue(track: any): number {
+    return Math.floor(track.duration_ms/60000);
   }
 
 }
