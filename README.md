@@ -1,1 +1,35 @@
-# Proyecto GestiÛn de Datos 2310## Integrantes del equipo- Miguel ¡ngel GutiÈrrez IbaguÈ- Abelardo Valdivieso Acevedo- Jorge Esteban CastaÒeda## Alcance y CaracterÌsticas del proyectoEl presente proyecto se realiza para la asignatura GestiÛn de Datos en la Pontifica Universidad Javeriana, en e perÌodo 2310.Dicho proyecto consta de:- PresentaciÛn de Notebooks generados en la entrega 1 y 2- PresentaciÛn de Documento relacionado al proyecto desde la entrega 1 a la 3, incluyendo anexos para extender las pruebas del funcionamiento de los notebooks desarollados en entregas anteriores.- Carpeta con el API Backend desarrollada en FastAPI para el consumo del modelo predictivo y administrar endpoints para el consumo del frontend.- Carpeta con frontend desarrollado en Angular para el consumo y presentaciÛn del modelo.- Carpeta con proyecto Python para generaciÛn del modelo.## OrganizaciÛn del repositorioEl repositorio cuenta con los siguientes archivos en la raÌz del mismo:- Documento relacionado al proyectoComo carpetas principales, se cuenta con las siguientes:- Entrega 1 y 2: Notebooks de Jupyter (Ejecutados en Google Colab) de las entregas iniciales.- Backend_API: Proyecto en FastAPI que expone el API que permite el uso del modelo de recomendaciones y expone endpoints para el consumo por parte del frontend.- Frontend_Spotify_Model: Proyecto en Angular que usa los endpoints del API mencionada en la carpeta anterior para la presentaciÛn del sistema.- ModelGenerator: Proyecto en Python que genera el Modelo entrenado usado para el sistema de recomendaciÛn.## Instrucciones de ejecuciÛnAl entrar a cada una de las carpetas de los proyectos, encontrar· las instrucciones de ejecuciÛn de cada uno de ellos.
+# Proyecto Gesti√≥n de Datos 2310
+
+## Integrantes del equipo
+
+- Miguel √Ångel Guti√©rrez Ibagu√©
+- Abelardo Valdivieso Acevedo
+- Jorge Esteban Casta√±eda L√≥pez
+
+## Alcance y Caracter√≠sticas del proyecto
+
+El presente proyecto se realiza para la asignatura Gesti√≥n de Datos en la Pontifica Universidad Javeriana, en e per√≠odo 2310.
+Dicho proyecto consta de:
+
+- Presentaci√≥n de Notebooks generados en la entrega 1 y 2
+- Presentaci√≥n de Documento relacionado al proyecto desde la entrega 1 a la 3, incluyendo anexos para extender las pruebas del funcionamiento de los notebooks desarollados en entregas anteriores.
+- Carpeta con el API Backend desarrollada en FastAPI para el consumo del modelo predictivo y administrar endpoints para el consumo del frontend.
+- Carpeta con frontend desarrollado en Angular para el consumo y presentaci√≥n del modelo.
+- Carpeta con proyecto Python para generaci√≥n del modelo.
+
+## Organizaci√≥n del repositorio
+
+El repositorio cuenta con los siguientes archivos en la ra√≠z del mismo:
+
+- Documento relacionado al proyecto
+
+Como carpetas principales, se cuenta con las siguientes:
+
+- Entrega 1 y 2: Notebooks de Jupyter (Ejecutados en Google Colab) de las entregas iniciales.
+- Backend_API: Proyecto en FastAPI que expone el API que permite el uso del modelo de recomendaciones y expone endpoints para el consumo por parte del frontend.
+- Frontend_Spotify_Model: Proyecto en Angular que usa los endpoints del API mencionada en la carpeta anterior para la presentaci√≥n del sistema.
+- ModelGenerator: Proyecto en Python que genera el Modelo entrenado usado para el sistema de recomendaci√≥n.
+
+## Instrucciones de ejecuci√≥n
+
+Al entrar a cada una de las carpetas de los proyectos, encontrar√° las instrucciones de ejecuci√≥n de cada uno de ellos.
