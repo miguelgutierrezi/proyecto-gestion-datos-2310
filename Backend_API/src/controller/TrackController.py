@@ -10,7 +10,7 @@ router = APIRouter(
 
 
 @router.get("/")
-async def get_all_tracks(page: int = 0, query: str = ""):
+async def get_all_tracks(page: int = 1, query: str = ""):
     try:
         response = TrackService.get_all_tracks(page, query)
         return JSONResponse(content=response, status_code=200)
