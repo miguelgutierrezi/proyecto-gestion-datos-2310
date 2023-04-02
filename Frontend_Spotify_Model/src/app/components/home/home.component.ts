@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TrackService} from "../../services/track.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ export class HomeComponent implements OnInit {
   isLoading: boolean = false;
 
   constructor(
-    private trackService: TrackService
+    private trackService: TrackService,
+    private router: Router
   ) {
   }
 
@@ -61,6 +63,10 @@ export class HomeComponent implements OnInit {
 
   public getDurationValue(track: any): number {
     return Math.floor(track.duration_ms/60000);
+  }
+
+  public navigateToTrackDetail(trackId: string) {
+    this.router.navigate(['/track', trackId])
   }
 
 }

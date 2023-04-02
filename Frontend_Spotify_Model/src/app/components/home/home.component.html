@@ -13,7 +13,7 @@
 
 <div class="text-center" *ngIf="!isLoading">
   <div class="cards-container">
-    <div class="card" *ngFor="let track of tracks">
+    <div class="card" *ngFor="let track of tracks" (click)="navigateToTrackDetail(track.id)">
       <img src="assets/song_icon.jpg" alt="Song icon">
       <div class="card-body">
         <h5 class="card-title">{{track.name}}</h5>

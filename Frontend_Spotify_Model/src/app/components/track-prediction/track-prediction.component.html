@@ -1,1 +1,23 @@
-<p>track-prediction works!</p>
+<div class="text-center">
+  <h1>Canciones sugeridas</h1>
+</div>
+
+<div class="text-center" *ngIf="isLoading">
+  <app-loader></app-loader>
+</div>
+
+<div class="text-center" *ngIf="!isLoading">
+  <div class="cards-container">
+    <div class="card-prediction" *ngFor="let track of trackPredictions" (click)="navigateToTrackDetail(track.id)">
+      <img src="assets/song_icon.jpg" alt="Song icon">
+      <div class="card-body">
+        <h5 class="card-title">{{track.name}}</h5>
+        <p class="card-text">
+          Duracion {{getDurationValue(track)}} minutos
+          <br>
+          {{track.artists}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

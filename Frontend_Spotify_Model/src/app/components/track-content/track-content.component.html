@@ -1,1 +1,11 @@
-<p>track-content works!</p>
+<div class="text-center">
+  <span routerLink="/home" class="home-button actionable">Volver al home</span>
+</div>
+
+<div class="text-center">
+  <h1>Detalle de canción</h1>
+</div>
+
+<app-track-detail [trackId]="trackId"></app-track-detail>
+<hr />
+<app-track-prediction [trackId]="trackId"></app-track-prediction>

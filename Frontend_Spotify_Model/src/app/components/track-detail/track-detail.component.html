@@ -1,1 +1,14 @@
-<p>track-detail works!</p>
+<div class="text-center" *ngIf="isLoading">
+  <app-loader></app-loader>
+</div>
+
+<div class="text-center">
+  <div class="card-horizontal" *ngIf="!isLoading">
+    <img class="card-img" src="assets/song_icon.jpg" alt="Song icon">
+    <div class="card-body">
+      <h5 class="card-title">{{track.name}}</h5>
+      <p class="card-text">Artistas: {{track.artists}}</p>
+      <p class="card-text">Duración: {{getDurationValue(track)}} minutos</p>
+    </div>
+  </div>
+</div>
