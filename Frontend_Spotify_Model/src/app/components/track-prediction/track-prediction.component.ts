@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TrackService} from "../../services/track.service";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-track-prediction',
@@ -14,8 +13,7 @@ export class TrackPredictionComponent implements OnInit {
   trackPredictions: Array<any> = [];
 
   constructor(
-    private trackService: TrackService,
-    private router: Router
+    private trackService: TrackService
   ) { }
 
   ngOnInit(): void {
@@ -34,11 +32,6 @@ export class TrackPredictionComponent implements OnInit {
 
   public getDurationValue(track: any): number {
     return Math.floor(track.duration_ms/60000);
-  }
-
-  public navigateToTrackDetail(trackId: string) {
-    this.router.navigate(['/track', trackId])
-    window.location.reload();
   }
 
 }

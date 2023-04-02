@@ -1,6 +1,7 @@
 # Frontend Modelo Recomendación de canciones
 
 En caso de no querer ejecutar este proyecto de manera local, puede usar la sigiuiente url para probarlo
+[https://modelo-recomendaciones-gestion.web.app/](https://modelo-recomendaciones-gestion.web.app/)
 
 - Prerrequisitos
   - NodeJS
