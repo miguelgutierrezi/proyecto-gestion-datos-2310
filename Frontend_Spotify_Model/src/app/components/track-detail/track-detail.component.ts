@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {TrackService} from "../../services/track.service";
 
 @Component({
@@ -6,7 +6,7 @@ import {TrackService} from "../../services/track.service";
   templateUrl: './track-detail.component.html',
   styleUrls: ['./track-detail.component.sass']
 })
-export class TrackDetailComponent implements OnInit {
+export class TrackDetailComponent implements OnInit, OnChanges {
 
   @Input() trackId!: string;
   isLoading: boolean = false;
@@ -17,6 +17,16 @@ export class TrackDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getTrackDetails();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['trackId']) {
+      this.getTrackDetails();
+    }
+  }
+
+  public getTrackDetails(): void {
     this.isLoading = true;
     this.trackService.getTrackById(this.trackId).subscribe({
       next: res => {

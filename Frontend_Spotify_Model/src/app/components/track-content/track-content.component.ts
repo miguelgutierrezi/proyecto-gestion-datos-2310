@@ -15,7 +15,10 @@ export class TrackContentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.trackId = this.route.snapshot.params['trackId'];
+    this.route.paramMap.subscribe(params => {
+      this.trackId = params.get('trackId') || '';
+      console.log(this.trackId);
+    });
   }
 
 }
