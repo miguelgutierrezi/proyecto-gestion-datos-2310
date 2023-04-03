@@ -6,7 +6,7 @@ import {TrackService} from "../../services/track.service";
   templateUrl: './track-detail.component.html',
   styleUrls: ['./track-detail.component.sass']
 })
-export class TrackDetailComponent implements OnInit, OnChanges {
+export class TrackDetailComponent implements OnChanges {
 
   @Input() trackId!: string;
   isLoading: boolean = false;
@@ -15,10 +15,6 @@ export class TrackDetailComponent implements OnInit, OnChanges {
   constructor(
     private trackService: TrackService
   ) { }
-
-  ngOnInit(): void {
-    this.getTrackDetails();
-  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['trackId']) {

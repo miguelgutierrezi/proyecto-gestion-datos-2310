@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
   templateUrl: './track-prediction.component.html',
   styleUrls: ['./track-prediction.component.sass']
 })
-export class TrackPredictionComponent implements OnInit, OnChanges {
+export class TrackPredictionComponent implements OnChanges {
 
   @Input() trackId!: string;
   isLoading: boolean = false;
@@ -17,10 +17,6 @@ export class TrackPredictionComponent implements OnInit, OnChanges {
     private trackService: TrackService,
     private router: Router
   ) { }
-
-  ngOnInit(): void {
-    this.getTrackPredictions();
-  }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['trackId']) {

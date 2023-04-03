@@ -17,7 +17,7 @@ class TrackRepository:
         query = f"""
         SELECT id, name, duration_ms, artists, release_date
         FROM `proyecto-gestion-2310.{TRACKS_TABLE_NAME}`
-        WHERE name LIKE '%{query}%'
+        WHERE UPPER(name) LIKE UPPER('%{query}%')
         LIMIT {page_size}
         OFFSET {offset}
         """
